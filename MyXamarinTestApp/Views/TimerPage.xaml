@@ -2,8 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyXamarinTestApp.Views.TimerPage">
-   
 
-    <Label Text="TIMER"/>
+    <Label Text="&#x201C;TIMER&#x201C;"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="Center"
+               Rotation="-15"
+               IsVisible="true"
+               FontSize="Large"
+               FontAttributes="Bold"
+               TextColor="Blue" />
+  
 
 </ContentPage>

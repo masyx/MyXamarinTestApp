@@ -1,5 +1,42 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MyXamarinTestApp.Views.PageWithSlider">
-    <ContentPage.Content>
-    </ContentPage.Content>
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyXamarinTestApp.Views.PageWithSlider"
+             Title="XAML + Code Page">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BorderColor" Value="Teal" />
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="BorderWidth" Value="5" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="TextColor" Value="Teal" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Slider x:Name="slider"
+                VerticalOptions="CenterAndExpand"
+                Minimum="0"
+                Value="5"
+                Maximum="100"
+                HeightRequest="50"
+                WidthRequest="170"
+                HorizontalOptions="CenterAndExpand"
+                Scale="2.5"
+                ValueChanged="Slider_ValueChanged"/>
+
+        <Label x:Name="labelSliderValue"
+               Text="A simple Label"
+               Font="28"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+        <Button Text="Click Me!"
+                Style="buttonStyle"
+                Clicked="Button_Clicked"/>
+    </StackLayout>
 </ContentPage>

@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModel="clr-namespace:MyXamarinTestApp.ViewModels"
              mc:Ignorable="d"
-             x:Class="MyXamarinTestApp.MainPage">
+             x:Class="MyXamarinTestApp.MainPage"
+             Title="MyXamarinTestApp">
     <!--<ContentPage.BindingContext>
         <viewModel:MainPageViewModel />
     </ContentPage.BindingContext> -->
@@ -35,12 +36,13 @@
             </Grid.ColumnDefinitions>
         
         
-        <Button Text="Navigate to Timer"
+        <Button Text="TIMER"
                 Grid.Row="0" Grid.Column="0"
                 Command="{Binding NavigateToTimerCommand}"
                 Style="{StaticResource buttonStyle}"/>
-        <Button Text="Navigate to ..."
+        <Button Text="Page with Slider"
                 Grid.Row="0" Grid.Column="1"
+                Command="{Binding NavigateToPageWithSliderCommand}"
                 Style="{StaticResource buttonStyle}"/>
 
         </Grid>

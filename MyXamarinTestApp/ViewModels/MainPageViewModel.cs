@@ -6,6 +6,8 @@ namespace MyXamarinTestApp.ViewModels
 {
     public class MainPageViewModel : BaseViewModel
     {
+        public INavigation Navigation { get; set; }
+
         public MainPageViewModel()
         {
 
@@ -16,12 +18,17 @@ namespace MyXamarinTestApp.ViewModels
             
         }
 
-        public INavigation Navigation { get; set; }
-
         public Command NavigateToTimerCommand =>
             new Command(async() =>
             {
                 await Navigation.PushAsync(new TimerPage());
+            });
+
+
+        public Command NavigateToPageWithSliderCommand =>
+            new Command(async() =>
+            {
+                await Navigation.PushAsync(new PageWithSlider());
             });
 
     }
