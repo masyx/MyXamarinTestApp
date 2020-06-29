@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModel="clr-namespace:MyXamarinTestApp.ViewModels"
              mc:Ignorable="d"
-             x:Class="MyXamarinTestApp.MainPage"
+             x:Class="MyXamarinTestApp.Views.MainPage"
              Title="MyXamarinTestApp">
     <!--<ContentPage.BindingContext>
         <viewModel:MainPageViewModel />
@@ -24,9 +24,9 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout>
-        <Grid Padding="5">
-            <Grid.RowDefinitions>
+    <StackLayout> <!--Object element-->
+        <Grid Padding="5"> <!--Padding is an attribute-->
+            <Grid.RowDefinitions> <!--Property element-->
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
@@ -34,16 +34,40 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-        
-        
+
+             
         <Button Text="TIMER"
-                Grid.Row="0" Grid.Column="0"
+                Grid.Row="0" Grid.Column="0" 
                 Command="{Binding NavigateToTimerCommand}"
-                Style="{StaticResource buttonStyle}"/>
+                Style="{StaticResource buttonStyle}"/><!-- Grid.Row and Grid.Column
+            here are ATTACHED PROPERTIES-->
+
+
         <Button Text="Page with Slider"
                 Grid.Row="0" Grid.Column="1"
                 Command="{Binding NavigateToPageWithSliderCommand}"
                 Style="{StaticResource buttonStyle}"/>
+
+        <Button Text="Grid Demo Page"
+                Grid.Row="1" Grid.Column="0"
+                Command="{Binding NavigateToGridDemoPage}"
+                Style="{StaticResource buttonStyle}"/>
+
+        <Button Text="AbsoluteLayout Demo Page"
+                Grid.Row="1" Grid.Column="0"
+                Command="{Binding NavigateToAbsoluteLayoutDemoPage}"
+                Style="{StaticResource buttonStyle}"/>
+
+        <Button Text="Shared Recourses Page"
+                Grid.Row="1" Grid.Column="1"
+                Command="{Binding NavigateToSharedRecourses}"
+                Style="{StaticResource buttonStyle}"/>
+
+        <Button Text="Static Constants Page"
+                Grid.Row="2" Grid.Column="0"
+                Command="{Binding NavigateToStaticConstantsPage}"
+                Style="{StaticResource buttonStyle}"/>
+
 
         </Grid>
     </StackLayout>

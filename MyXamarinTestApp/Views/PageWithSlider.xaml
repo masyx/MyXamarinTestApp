@@ -36,7 +36,7 @@
                VerticalOptions="CenterAndExpand" />
 
         <Button Text="Click Me!"
-                Style="buttonStyle"
+                Style="{StaticResource buttonStyle}"
                 Clicked="Button_Clicked"/>
     </StackLayout>
 </ContentPage>

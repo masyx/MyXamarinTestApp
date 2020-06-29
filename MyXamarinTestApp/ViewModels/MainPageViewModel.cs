@@ -31,5 +31,29 @@ namespace MyXamarinTestApp.ViewModels
                 await Navigation.PushAsync(new PageWithSlider());
             });
 
+        public Command NavigateToGridDemoPage =>
+            new Command(async () =>
+            {
+                await Navigation.PushAsync(new GridDemoPage());
+            });
+
+        public Command NavigateToAbsoluteLayoutDemoPage =>
+            new Command(async () =>
+            {
+                await Navigation.PushAsync(new AbsoluteDemoPage());
+            });
+
+        public Command NavigateToSharedRecourses =>
+            new Command(async () =>
+            {
+                await Navigation.PushAsync(new SharedResourcesPage());
+            });
+
+        public Command NavigateToStaticConstantsPage =>
+            new Command(async () =>
+            {
+                await Navigation.PushAsync(new StaticConstantsPage());
+            });
+
     }
 }

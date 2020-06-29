@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using MyXamarinTestApp.ViewModels;
 using Xamarin.Forms;
 
-namespace MyXamarinTestApp
+namespace MyXamarinTestApp.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
