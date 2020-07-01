@@ -68,6 +68,11 @@
                 Command="{Binding NavigateToStaticConstantsPage}"
                 Style="{StaticResource buttonStyle}"/>
 
+        <Button Text="Triggers Page"
+                Grid.Row="2" Grid.Column="0"
+                Command="{Binding NavigateToTriggersPage}"
+                Style="{StaticResource buttonStyle}"/>
+
 
         </Grid>
     </StackLayout>

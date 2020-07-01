@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:util="clr-namespace:MyXamarinTestApp.Util"
+             x:Class="MyXamarinTestApp.Views.TriggersPage">
+    <ContentPage.Content>
+        <Entry Placeholder="enter job title">
+    <Entry.Triggers>
+        <Trigger TargetType="Entry"
+                 Property="Entry.IsFocused" Value="True">
+            <Trigger.EnterActions>
+                <util:FadeTriggerAction StartsFrom="0" />
+            </Trigger.EnterActions>
+
+            <Trigger.ExitActions>
+                <util:FadeTriggerAction StartsFrom="1" />
+            </Trigger.ExitActions>
+            <!-- You can use both Enter/Exit and Setter together if required -->
+        </Trigger>
+    </Entry.Triggers>
+</Entry>
+    </ContentPage.Content>
+</ContentPage>

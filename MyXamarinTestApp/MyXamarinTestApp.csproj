@@ -17,6 +17,7 @@
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
+    <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">

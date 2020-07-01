@@ -55,5 +55,11 @@ namespace MyXamarinTestApp.ViewModels
                 await Navigation.PushAsync(new StaticConstantsPage());
             });
 
+        public Command NavigateToTriggersPage =>
+            new Command(async () =>
+            {
+                await Navigation.PushAsync(new TriggersPage());
+            });
+
     }
 }
