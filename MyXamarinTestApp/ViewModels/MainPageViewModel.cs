@@ -61,5 +61,17 @@ namespace MyXamarinTestApp.ViewModels
                 await Navigation.PushAsync(new TriggersPage());
             });
 
+        public Command NavigateToXAMLvsCode =>
+            new Command(async () =>
+            {
+                await Navigation.PushAsync(new XAMLvsCode());
+            });
+
+        public Command NavigateToXAMLvsCode2 =>
+            new Command(async () =>
+            {
+                await Navigation.PushAsync(new XAMLvsCode2());
+            });
+
     }
 }

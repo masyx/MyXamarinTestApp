@@ -73,6 +73,18 @@
                 Command="{Binding NavigateToTriggersPage}"
                 Style="{StaticResource buttonStyle}"/>
 
+        <Button Text="XAML vs Code_C#"
+                Grid.Row="2" Grid.Column="1"
+                Command="{Binding NavigateToXAMLvsCode}"
+                Style="{StaticResource buttonStyle}"
+                BackgroundColor="Bisque"/>
+
+        <Button Text="XAML vs Code_XAML"
+                Grid.Row="3" Grid.Column="1"
+                Command="{Binding NavigateToXAMLvsCode2}"
+                Style="{StaticResource buttonStyle}"
+                BackgroundColor="Bisque"/>
+
 
         </Grid>
     </StackLayout>
