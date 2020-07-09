@@ -85,6 +85,12 @@
                 Style="{StaticResource buttonStyle}"
                 BackgroundColor="Bisque"/>
 
+        <Button Text="Clock"
+                Grid.Row="3" Grid.Column="0"
+                Command="{Binding NavigateToClock}"
+                Style="{StaticResource buttonStyle}"
+                BackgroundColor="Bisque"/>
+
 
         </Grid>
     </StackLayout>

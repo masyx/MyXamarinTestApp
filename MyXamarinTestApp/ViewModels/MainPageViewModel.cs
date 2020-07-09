@@ -73,5 +73,11 @@ namespace MyXamarinTestApp.ViewModels
                 await Navigation.PushAsync(new XAMLvsCode2());
             });
 
+        public Command NavigateToClock =>
+            new Command(async () =>
+            {
+                await Navigation.PushAsync(new Clock());
+            });
+
     }
 }
