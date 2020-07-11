@@ -10,7 +10,6 @@ namespace MyXamarinTestApp.Views
         public Clock()
         {
             InitializeComponent();
-            BindingContext = new ClockViewModel();
         }
     }
 }

@@ -1,5 +1,34 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MyXamarinTestApp.Views.Clock">
-    <ContentPage.Content>
-    </ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:viewModel="clr-namespace:MyXamarinTestApp.ViewModels"
+             x:Class="MyXamarinTestApp.Views.Clock">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <viewModel:ClockViewModel x:Key="clockViewModel"/>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout VerticalOptions="Center">
+        <StackLayout.BindingContext>
+            <Binding Path="MyDateTime">
+                <Binding.Source>
+                    <viewModel:ClockViewModel/>
+                </Binding.Source>
+            </Binding>
+        </StackLayout.BindingContext>
+
+        <Label Text="{Binding Source={x:Static sys:DateTime.Now},
+            StringFormat='This program started at {0:F}'}"/>
+        <Label Text="But now..." />
+        <Label Text="{Binding Hour, StringFormat='The hour is {0}'}" />
+        <Label Text="{Binding Minute, StringFormat='The minute is: {0}'}"/>
+        <Label Text="{Binding Second, StringFormat='The second is: {0}'}"/>
+        <Label Text="{Binding Millisecond, StringFormat='The millisecond is: {0}'}"/>
+    </StackLayout>
 </ContentPage>

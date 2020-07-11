@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace MyXamarinTestApp.ViewModels
 {
-    public class ClockViewModel
+    public class ClockViewModel : INotifyPropertyChanged
     {
         DateTime dateTime = DateTime.Now;
 
@@ -22,11 +22,11 @@ namespace MyXamarinTestApp.ViewModels
 
         bool OnTimerTick()
         {
-            DateTime = DateTime.Now;
+            MyDateTime = DateTime.Now;
             return true;
         }
 
-        public DateTime DateTime
+        public DateTime MyDateTime
         {
             private set
             {
@@ -34,7 +34,7 @@ namespace MyXamarinTestApp.ViewModels
                 {
                     dateTime = value;
                     // Fire the event.
-                    RaisePropertyChanged(nameof(DateTime));
+                    RaisePropertyChanged(nameof(MyDateTime));
                 }
             }
             get
