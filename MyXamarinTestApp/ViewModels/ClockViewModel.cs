@@ -12,7 +12,8 @@ namespace MyXamarinTestApp.ViewModels
 
         protected virtual void RaisePropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChangedEventHandler handler = PropertyChanged;
+            handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public ClockViewModel()
