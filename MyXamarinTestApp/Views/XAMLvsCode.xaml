@@ -1,7 +1,49 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MyXamarinTestApp.Views.XAMLvsCode">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyXamarinTestApp.Views.XAMLvsCode">
     <ContentPage.Content>
-        
+        <StackLayout>
+            <Frame OutlineColor="Accent">
+                <Frame.HorizontalOptions>
+                    <!--Preferred way is to have property attribute
+                                            HorizontalOptions="Center"-->
+                    <LayoutOptions Alignment="Center"
+                               Expands="False"/>
+                </Frame.HorizontalOptions>
+                <Frame.VerticalOptions>
+                    Center
+                    <!--using here Property Element sytax insted of Property Attribute,
+                            just for demonstration perposes.-->
+                </Frame.VerticalOptions>
+
+                <Frame.Content>
+                    <Label Text="Label from XAML"
+                         IsVisible="True"
+                         Opacity="0.75"
+                         HorizontalTextAlignment="Center"
+                         VerticalOptions="CenterAndExpand"
+                         TextColor="Blue"
+                         BackgroundColor="#FF8080"
+                         FontSize="Large"
+                         FontAttributes="Bold,Italic" />
+                </Frame.Content>
+
+            </Frame>
+
+            <Label Text="Hello from XAML!"
+                    IsVisible="True"
+                    Opacity="0.75"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="Blue"
+                    BackgroundColor="#FF8080"
+                    FontSize="Large"
+                    FontAttributes="Bold,Italic" />
+
+        </StackLayout>
+
+
 
     </ContentPage.Content>
 </ContentPage>

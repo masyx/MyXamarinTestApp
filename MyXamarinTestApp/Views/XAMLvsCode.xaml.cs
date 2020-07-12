@@ -9,33 +9,25 @@ namespace MyXamarinTestApp.Views
     {
         public XAMLvsCode()
         {
+            InitializeComponent();
+
             var colorConverter = new ColorTypeConverter();
             var myColor = colorConverter.ConvertFromInvariantString("Green");
 
-            var frame1 = new Frame
+            Label label = new Label
             {
-                BorderColor = Color.Accent,
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center,
-                Content = new Label
-                {
-                    Text = "Label from Code",
-                    IsVisible = true,
-                    Opacity = 0.75,
-                    HorizontalTextAlignment = TextAlignment.Center,
-                    VerticalOptions = LayoutOptions.CenterAndExpand,
-                    TextColor = (Color)myColor,
-                    BackgroundColor = Color.FromRgb(1, 1, 1),
-                    FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-                    FontAttributes = FontAttributes.Bold | FontAttributes.Italic
-                }
+                Text = "Hello from Code!",
+                IsVisible = true,
+                Opacity = 0.75,
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                TextColor = (Color)myColor,
+                BackgroundColor = Color.FromRgb(255, 128, 128),
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+                FontAttributes = FontAttributes.Bold | FontAttributes.Italic
             };
 
-            Content = frame1;
-            
-                      
-
-            InitializeComponent();
+            (Content as StackLayout).Children.Insert(0, label);
         }
     }
 }

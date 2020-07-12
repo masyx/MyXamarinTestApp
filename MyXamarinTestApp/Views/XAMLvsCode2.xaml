@@ -3,24 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyXamarinTestApp.Views.XAMLvsCode2">
     <ContentPage.Content>
-
-        <Frame OutlineColor="Accent"
-               HorizontalOptions="Center"
-               VerticalOptions="Center">
-
-            <Frame.Content>
-                <Label Text="Label from XAML"
-                         IsVisible="True"
-                         Opacity="0.75"
-                         HorizontalTextAlignment="Center"
-                         VerticalOptions="CenterAndExpand"
-                         TextColor="Blue"
-                         BackgroundColor="#FF8080"
-                         FontSize="Large"
-                         FontAttributes="Bold,Italic" />
-            </Frame.Content>
-
-        </Frame>
-
+        
     </ContentPage.Content>
 </ContentPage>
