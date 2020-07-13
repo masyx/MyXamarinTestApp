@@ -78,6 +78,12 @@ namespace MyXamarinTestApp.ViewModels
             {
                 await Navigation.PushAsync(new Clock());
             });
+        
+        public Command NavigateToOpacityBindingCodePage =>
+            new Command(async () =>
+            {
+                await Navigation.PushAsync(new OpacityBindingCodePage());
+            });
 
     }
 }

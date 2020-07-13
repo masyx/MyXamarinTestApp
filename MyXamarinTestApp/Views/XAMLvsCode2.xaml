@@ -2,7 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyXamarinTestApp.Views.XAMLvsCode2">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0"
+                    Android="0,20,0,0"/>
+    </ContentPage.Padding>
+
+
+
+    <StackLayout>
+        <Frame OutlineColor="Accent">
+            <StackLayout Orientation="Horizontal">
+                <BoxView Color="Red" />
+                <Label Text="Red"
+                        VerticalOptions="Center" />
+            </StackLayout>
+        </Frame>
+        <Frame OutlineColor="Accent">
+            <StackLayout Orientation="Horizontal">
+                <BoxView Color="Green" />
+                <Label Text="Green"
+                        VerticalOptions="Center" />
+            </StackLayout>
+
+        </Frame>
+        <Frame OutlineColor="Accent">
+            <StackLayout Orientation="Horizontal">
+                <BoxView Color="Blue" />
+                <Label Text="Blue"
+                        VerticalOptions="Center" />
+            </StackLayout>
+        </Frame>
+
+
+        <Label VerticalOptions="End">            <Label.FormattedText>
+                <FormattedString>                    <Span Text="A paragraph of formatted text requires left justifyingit within the XAML file. But the text can include multiplekinds of character formatting, including " />                    <Span Text="bold" FontAttributes="Bold" />                    <Span Text=" and " />                    <Span Text="italic" FontAttributes="Italic" />                    <Span Text=" and " />                    <Span Text="large" FontSize="Large" />                    <Span Text=" and whatever combinations you might desire to adornyour glorious prose." />                </FormattedString>
+            </Label.FormattedText>        </Label>
+    </StackLayout>
 </ContentPage>
