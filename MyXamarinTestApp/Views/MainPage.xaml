@@ -90,11 +90,15 @@
                 Command="{Binding NavigateToClock}"
                 Style="{StaticResource buttonStyle}"/>
 
-        <Button Text="Opacity Binding"
+        <Button Text="Opacity Binding Code"
                 Grid.Row="4" Grid.Column="0"
                 Command="{Binding NavigateToOpacityBindingCodePage}"
                 Style="{StaticResource buttonStyle}"/>
 
+        <Button Text="Opacity Binding XAML"
+                Grid.Row="4" Grid.Column="1"
+                Command="{Binding NavigateToOpacityBindingXAMLPage}"
+                Style="{StaticResource buttonStyle}"/>
         </Grid>
     </StackLayout>
 </ContentPage>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MyXamarinTestApp.Views.OpacityBindingXAMLPage">
+    <StackLayout>
+        <!-- In the BindingContext property attribute of Label elemnt
+             I can remove Name because public class that provides support
+             for Reference is 'ReferenceExtension' which defines its content
+             property to be Name. The content property of BindingExtension is
+             Path, so I don't need it either-->
+        <Label Text="Binding Source Demo"
+               FontSize="30"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+               BindingContext="{x:Reference Name=slider}" 
+               Opacity="{Binding Path=Value}"/>
+
+        <Label Text="Binding Source Demo"
+               FontSize="30"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+               Opacity="{Binding Value, Source={x:Reference slider}}"/>
+
+        <Label Text="Binding Source Demo"
+               FontSize="30"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center" 
+               Opacity="{Binding Source={x:Reference slider}, Path=Value}"/>
+        <!--Binding
+        here called markup extension and x:Reference is markup extension too-->
+
+        <Label Text="Binding Source Demo"
+               FontSize="30"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center">
+            <Label.Opacity>
+                <Binding Source="{x:Reference slider}"
+                         Path="Value"/>
+            </Label.Opacity>
+        </Label>
+
+        <Label Text="Binding Source Demo"
+               FontSize="30"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center">
+            <Label.Opacity>
+                <Binding Path="Value">
+                    <Binding.Source>
+                        <x:Reference Name="slider"/>
+                    </Binding.Source>
+                </Binding>
+            </Label.Opacity>
+        </Label>
+
+        <Label Text="Binding Source Demo"
+               FontSize="30"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+               BindingContext="{Binding Source={x:Reference Name=slider}, Path=Value}"
+               Opacity="{Binding}" />
+
+
+        <Slider x:Name="slider" Value="0.5"
+                ThumbColor="DarkRed"
+                BackgroundColor="Aquamarine"
+                VerticalOptions="CenterAndExpand"/>
+    </StackLayout>
+
+</ContentPage>
