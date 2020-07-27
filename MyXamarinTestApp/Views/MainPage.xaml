@@ -99,6 +99,10 @@
                 Grid.Row="4" Grid.Column="1"
                 Command="{Binding NavigateToOpacityBindingXAMLPage}"
                 Style="{StaticResource buttonStyle}"/>
+        <Button Text="Path property"
+                Grid.Row="5" Grid.Column="0"
+                Command="{Binding NavigateToPathPropertyPage}"
+                Style="{StaticResource buttonStyle}"/>
         </Grid>
     </StackLayout>
 </ContentPage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:global="clr-namespace:System.Globalization;assembly=netstandard"
+             x:Class="MyXamarinTestApp.Views.PathPropertyPage"
+             x:Name="pathPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="10, 20, 10, 0"
+                    Android="10, 20, 10, 0"
+                    WinPhone="10, 0" />
+    </ContentPage.Padding>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="baseStyle" TargetType="View">
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style TargetType="Label" BasedOn="{StaticResource baseStyle}">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style TargetType="Slider" BasedOn="{StaticResource baseStyle}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout BindingContext="{x:Reference pathPage}">
+        <Label Text="{Binding Path=Padding.Top,
+                              StringFormat='The top padding is {0}'}"/>
+        <Label Text="{Binding Path=Content.Children[4].Value,
+                              StringFormat='Slider value is {0:F2}'}"/>
+        <Label Text="{Binding Source={x:Static global:CultureInfo.CurrentCulture},
+                              Path=DateTimeFormat.DayNames[6],
+                              StringFormat='Last day of the week is: {0}'}"/>
+        <Label Text="{Binding Path=Content.Children[2].Text.Length,
+                              StringFormat='The preceding label has {0} characters'}"/>
+        <Slider/>
+    </StackLayout>
+
+</ContentPage>

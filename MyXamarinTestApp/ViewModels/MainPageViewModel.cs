@@ -90,6 +90,12 @@ namespace MyXamarinTestApp.ViewModels
             {
                 await Navigation.PushAsync(new OpacityBindingXAMLPage());
             });
+        
+        public Command NavigateToPathPropertyPage =>
+            new Command(async () =>
+            {
+                await Navigation.PushAsync(new PathPropertyPage());
+            });
 
     }
 }
