@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:util="clr-namespace:MyXamarinTestApp.Util"
+             x:Class="MyXamarinTestApp.Views.ValueConvertersPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <util:BoolToStringConverter x:Key="BoolToString"
+                                        TrueString="Let's do it!!!"
+                                        FalseString="Not not :("/>
+            <util:BoolToColorConverter x:Key="BoolToColor"
+                                       TrueColor="Green"
+                                       FalseColor="Red"/>
+            <Style TargetType="Label" x:Name="labelStyle">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Entry x:Name="entry"
+               Text=""
+               Placeholder="Enter text here"/>
+
+        <Button Text="Send"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                IsEnabled="{Binding Source={x:Reference entry},
+                            Path=Text.Length,
+                            Converter={StaticResource IntToBool}}"/>
+
+         <!-- First Switch with text. -->
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="CenterAndExpand">
+            <Label Text="Learn more?"/>
+            <Switch x:Name="switch1"
+                    VerticalOptions="Center"/>
+            <Label Text="{Binding Source={x:Reference switch1},
+                          Path=IsToggled,
+                          Converter={StaticResource BoolToString}}"/>
+        </StackLayout>
+
+
+    </StackLayout>
+    
+</ContentPage>

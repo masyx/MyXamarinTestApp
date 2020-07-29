@@ -97,5 +97,11 @@ namespace MyXamarinTestApp.ViewModels
                 await Navigation.PushAsync(new PathPropertyPage());
             });
 
+        public Command NavigateToValueConvertersPage =>
+            new Command(async () =>
+            {
+                await Navigation.PushAsync(new ValueConvertersPage());
+            });
+
     }
 }
